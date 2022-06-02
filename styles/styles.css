@@ -1,0 +1,59 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.menu-nav {
+  display: flex;
+}
+
+.menu-nav-list {
+  display: flex;
+}
+
+.menu-nav-list__item + .menu-nav-list__item {
+  margin-left: 40px;
+}
+
+.person-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.person-list__item + .person-list__item {
+  margin-left: 24px;
+}
+
+.header-wrapp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.searsh {
+  width: 813px;
+  height: 48px;
+}
+
+.person-info {
+  display: flex;
+}
+
+.person-info__item + .person-info__item {
+  margin-left: 16px;
+}
+.filter-list {
+  display: flex;
+  justify-content: space-around;
+}
