@@ -85,10 +85,19 @@ img {
   display: flex;
   justify-content: space-around;
 }
+/* -----------------------------------------SLIDER----------------------------------------- */
+.flex {
+  display: flex;
+}
 
 .slider {
   /* position: relative; */
   padding: 0 60px;
+  min-width: 0;
+}
+
+.slick-list {
+  overflow: hidden;
 }
 
 .slick-track {
@@ -98,15 +107,12 @@ img {
 
 .slider__item {
   align-items: center;
-  opacity: 0.4;
+  min-width: 0;
+  width: 400px;
 }
 
-.slider__item.slick-center {
-  opacity: 1;
-}
-
-.slider__item.slick-list {
-  overflow: hidden;
+.slider__item + .slider__item {
+  margin-left: 20px;
 }
 
 .slider .slick-arrow {
@@ -154,4 +160,9 @@ img {
 .slider .slick-dots li.slick-active button {
   background-color: transparent;
   border: 1px solid #fff;
+}
+
+.slider__text {
+  width: 300px;
+  text-align: center;
 }
