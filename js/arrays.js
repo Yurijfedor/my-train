@@ -51,6 +51,19 @@
 // Операція вводу числа продовжується до того часу, поки юзер не нажме Cancel в prompt.
 // Після чого потрібно показати alert з повідомленням "Загальна сума введених чисел дорівнює [число]
 
+// let total = 0;
+// let number;
+
+// do {
+//   number = Number.parseInt(prompt("введіть число"));
+//   if (!isNaN(number)) {
+//     total += number;
+//     console.log(total);
+//   }
+// } while (!isNaN(number));
+
+// alert(`Загальна сума введених чисел дорівнює ${total}`);
+
 // ----------------------------------------------------------------------ТУРИ---------------------------------------------ТУРИ-----------------------------------------------
 // Замовлення турів:
 // Пишемо реєстрацію користувача за допомогою prompt.  Окремо логін та пароль. Валідацію не потрібно робити.
@@ -201,3 +214,240 @@
 // }
 
 // findLongestWord("i love javascript");
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   let totalPrice = 0;
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       console.log(product.price);
+//       console.log(product.quantity);
+//       totalPrice = product.price * product.quantity;
+//     }
+//   }
+
+//   return totalPrice;
+// }
+// calculateTotalPrice("Droid");
+// ---------------------------------------------------------TASK4---TASK4-----TASK41-------------------------------
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+// Change code below this line
+
+// getPotions() {
+//   console.log(potions);
+// },
+// addPotion(newPotion) {
+//   for (const potion of potions) {
+//     // console.log(potion.name);
+//     // console.log(newPotion.name);
+//     // console.log(potion.name === newPotion.name);
+//     if (potion.name === newPotion.name) {
+//       return `Error! Potion ${newPotion} is already in your inventory!`;
+//     }
+//     potions.push(newPotion);
+//   }
+
+//   // console.log(potions);
+// },
+// removePotion(potionName) {
+//   for (const potion of this.potions) {
+//     const values = Object.values(potion);
+//     const potionIndex = this.potions.indexOf(potion);
+//     if (values[0] === potionName) {
+//       this.potions.splice(potionIndex, 1);
+//       break;
+//     }
+//     console.log(`Potion ${potionName} is not in inventory!`);
+//   }
+// },
+
+// if (potionIndex === -1) {
+//   return `Potion ${potionName} is not in inventory!`;
+// }
+
+// this.potions.splice(potionIndex, 1);
+
+//   updatePotionName(oldName, newName) {
+//     const potionIndex = this.potions.indexOf(oldName);
+
+//     if (potionIndex === -1) {
+//       return `Potion ${oldName} is not in inventory!`;
+//     }
+
+//     this.potions.splice(potionIndex, 1, newName);
+//   },
+//   // Change code above this line
+// };
+// const { potions, ...rest } = atTheOldToad;
+
+// atTheOldToad.getPotions();
+
+// atTheOldToad.addPotion({ name: "Speed potion", price: 680 });
+
+// atTheOldToad.removePotion("Dragon breath");
+
+// getPotions() {
+//   return this.potions;
+// },
+// addPotion(newPotion) {
+//       for (const potion of this.potions) {
+//     if (potion.name === newPotion.name) {
+//       return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//     }
+
+//       }
+
+//   this.potions.push(newPotion);
+// },
+// removePotion(potionName) {
+//   for (const potion of this.potions) {
+//     const values = Object.values(potion);
+//     console.log(values);
+//     console.log(values[0]);
+//     console.log(potionName);
+//     console.log(values[0] === potionName);
+//     const potionIndex = this.potions.indexOf(potion);
+//     console.log(potionIndex);
+//     if (values[0] === potionName) {
+//       this.potions.splice(potionIndex, 1);
+//     }
+//   }
+// },
+// -----------------------------------------------------FRILANCER----------------------------------------------
+// let userInfo = {};
+// userInfo.name = "Вася";
+// userInfo.age = 30;
+// userInfo.name = "Лена";
+// console.log(userInfo);
+// delete userInfo.name;
+// console.log(userInfo);
+// ----------------------------------------------------DENIS--#6-----------------------------------------------------------------------------------
+
+// const user = {
+//   id: 1,
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   email: "j.mercer@mail.com",
+//   friendCount: 40,
+//   info: {
+//     work: "GoIt",
+//     place: {
+//       city: "Kharkiv",
+//       country: "Ukraine",
+//     },
+//   },
+//   balance: {
+//     amount: 500,
+//   },
+// };
+
+// const {
+//   info: {
+//     place: { city },
+//   },
+// } = user;
+// console.log(city);
+
+// const {
+//   info: { work },
+//   balance: { amount },
+// } = user;
+
+// console.log(user.info);
+
+// const work = user.info ? user.info.work : "no work";
+// console.log(work);
+// const { info: { city, ...otherInfo } = {} } = user;
+// console.log(city);
+// console.log(otherInfo);
+
+// const { info } = user;
+
+// city = "Kiev";
+
+// console.log(user);
+
+// const arrOfUsers = [{ name: "Denis" }];
+// const [{ name }] = arrOfUsers;
+// console.log(name);
+
+// function getBotReport(data) {
+//   const {
+//     companyName,
+//     bots: { repair, defence },
+//   } = data;
+//   return `${companyName} has ${repair + defence} bots in stock`;
+// }
+// console.log(
+//   getBotReport({
+//     companyName: "Cyberdyne Systems",
+//     bots: {
+//       repair: 150,
+//       defence: 50,
+//     },
+//   })
+// );
+
+// --------------------------------------------НОВІ ЗАДАЧІ
+// // Реалізуйте result (через сплайс)
+// const a = ['a', 'b', 'c'];
+// const b = [1, [2, 3]];
+// const c = 0;
+
+// console.log(result); // ['a', 'b', 'c', 0, 1, 2, 3]
+
+// // Реалізуйте функцію, яка розгладить масив:
+// const arr = [1, 2, [3, 4], [5, 6], 7];
+// function foo() {
+//   const newArray = [];
+//   for (const el of arr) {
+//     Array.isArray(el) ? newArray.push(...el) : newArray.push(el);
+//   }
+//   return newArray;
+//   c;
+// }
+// console.log(foo(arr)); // [1, 2, 3, 4, 5, 6, 7]
+
+// ---------------------------------------------------------------------------------------
+ПЕРЕРОБИТИ;
+// // Реалізуй функцію, яка приймає тип String або Number і повертає масив з протилежним типом даних:
+// function convert(...args) {
+//   const newArr = [];
+//   for (const arg of args) {
+//     if (isNamber(arg)) {
+//       newArr.push(String(arg));
+//       break;
+//     }
+//     newArr.push(Number(arg));
+//   }
+//   return newArr;
+// }
+// console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
+
+// ----------------------------------------------------------------------------------------------------------
+ДОРОБИТИ
+// // Напиши функцію, яка приймає рядок text, та повертає масив усіх великих літер, які є в text
+// // в такому ж порядку.
+function getCapitals(string)
+const newArr = [];
+const 
+for ()
+
+
+
+
+getCapitals('Ukraine Everywhere') // ['U', 'E']
+getCapitals('UkraiNe EveRywherE') // ['U', 'N', 'E', 'R', 'E']
+getCapitals("1234M5678A9") // ['M', 'A']
+
