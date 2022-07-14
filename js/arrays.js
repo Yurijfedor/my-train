@@ -421,21 +421,24 @@
 
 // --------------------------------------------НОВІ ЗАДАЧІ
 // // Реалізуйте result (через сплайс)
-const a = ["a", "b", "c"];
-const b = [1, [2, 3]];
-const c = 0;
+// const a = ["a", "b", "c"];
+// const b = [1, [2, 3]];
+// const c = 0;
 
-function flatArr(arr1, arr2, arr3) {
-  const d = a.concat(c, b);
-  const result = [];
-  console.log(d);
-  for (let i = 0; i <= d.length; i += 1) {
-    console.log(isArray(d[i]));
-  }
-}
-flatArr(a, b, c);
+// function concatAndFlatArr(arr1, arr2, arr3) {
+//   const d = a.concat(c, b);
+//   for (let i = 0; i <= d.length; i += 1) {
+//     if (Array.isArray(d[i])) {
+//       d.splice(i, 1, d[i][0], d[i][1]);
+//     }
+//   }
+//   console.log(d);
+//   return d;
+// }
+// concatAndFlatArr(a, b, c);
 // console.log(result); // ['a', 'b', 'c', 0, 1, 2, 3]
 
+// -------------------------------------------------------------------------------------------------------------------------------------
 // // Реалізуйте функцію, яка розгладить масив:
 // const arr = [1, 2, [3, 4], [5, 6], 7];
 // function foo() {
@@ -451,18 +454,18 @@ flatArr(a, b, c);
 // ---------------------------------------------------------------------------------------
 // ПЕРЕРОБИТИ;
 // // Реалізуй функцію, яка приймає тип String або Number і повертає масив з протилежним типом даних:
-// function convert(...args) {
-//   const newArr = [];
-//   for (const arg of args) {
-//     if (isNamber(arg)) {
-//       newArr.push(String(arg));
-//       break;
-//     }
-//     newArr.push(Number(arg));
-//   }
-//   return newArr;
-// }
-// console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
+function convert(...args) {
+  const newArr = [];
+  for (const arg of args) {
+    if (isNamber(arg)) {
+      newArr.push(String(arg));
+      break;
+    }
+    newArr.push(Number(arg));
+  }
+  return newArr;
+}
+console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
 
 // ----------------------------------------------------------------------------------------------------------
 // ДОРОБИТИ;
