@@ -421,10 +421,19 @@
 
 // --------------------------------------------НОВІ ЗАДАЧІ
 // // Реалізуйте result (через сплайс)
-// const a = ['a', 'b', 'c'];
-// const b = [1, [2, 3]];
-// const c = 0;
+const a = ["a", "b", "c"];
+const b = [1, [2, 3]];
+const c = 0;
 
+function flatArr(arr1, arr2, arr3) {
+  const d = a.concat(c, b);
+  const result = [];
+  console.log(d);
+  for (let i = 0; i <= d.length; i += 1) {
+    console.log(isArray(d[i]));
+  }
+}
+flatArr(a, b, c);
 // console.log(result); // ['a', 'b', 'c', 0, 1, 2, 3]
 
 // // Реалізуйте функцію, яка розгладить масив:
