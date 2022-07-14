@@ -90,99 +90,119 @@
 // let userAvailableCountry = [];
 // let userCountries = [];
 // let maxPrice = 0;
+// let selectedCountries;
+// let filterSelectedCountries;
 
-// userName = prompt("Введіть логін");
-// userPass = prompt("Введіть пароль");
-// let userNameLog = prompt("Введіть Ваш логін");
-// while (userNameLog !== userName || userNameLog === null) {
-//   alert(
-//     `Ваш логін ${userNameLog} невірний. Будь-ласка, перевірте його та спробуйте ще раз`
-//   );
-//   userNameLog = prompt("Введіть Ваш логін");
+// function registerNewUser() {
+//   userName = prompt("Введіть логін");
+//   userPass = prompt("Введіть пароль");
 // }
-// alert(`Ваш логін ${userNameLog} успішний.`);
-
-// let userPasslog = prompt("Введіть Ваш пароль");
-// while (userPasslog !== userPass || userPasslog === null) {
-//   alert(
-//     `Ваш пароль ${userPasslog} невірний. Будь-ласка, перевірте його та спробуйте ще раз`
-//   );
-//   userPasslog = prompt("Введіть Ваш пароль");
+// function checkUserLog() {
+//   let userNameLog = prompt("Введіть Ваш логін");
+//   while (userNameLog !== userName || userNameLog === null) {
+//     alert(
+//       `Ваш логін ${userNameLog} невірний. Будь-ласка, перевірте його та спробуйте ще раз`
+//     );
+//     userNameLog = prompt("Введіть Ваш логін");
+//   }
+//   alert(`Ваш логін ${userNameLog} успішний.`);
 // }
-// alert(`Ваш пароль ${userPasslog} успішний! Вітаємо, ${userName}!`);
-
-// userCredits = Number.parseInt(
-//   prompt("Будь-ласка, введіть суму яку ви готові витратити на поїздку")
-// );
-// while (userCredits < countriesPrice[0] || isNaN(userCredits)) {
-//   alert(
-//     `Нажаль, сума ${userCredits} не достатня для здійснення замовлення! Будь-ласка, введіть більшу суму!`
-//   );
+// function checkUserPass() {
+//   let userPasslog = prompt("Введіть Ваш пароль");
+//   while (userPasslog !== userPass || userPasslog === null) {
+//     alert(
+//       `Ваш пароль ${userPasslog} невірний. Будь-ласка, перевірте його та спробуйте ще раз`
+//     );
+//     userPasslog = prompt("Введіть Ваш пароль");
+//   }
+//   alert(`Ваш пароль ${userPasslog} успішний! Вітаємо, ${userName}!`);
+// }
+// function getAmount() {
 //   userCredits = Number.parseInt(
 //     prompt("Будь-ласка, введіть суму яку ви готові витратити на поїздку")
 //   );
-// }
-// // for (let i = 0; i <= countriesPrice.length - 1; i += 1) {
-// //   maxPrice += countriesPrice[i];
-// // }
-// // console.log(maxPrice);
-
-// for (let i = 0; i <= countriesPrice.length; i += 1) {
-//   if (userCredits >= countriesPrice[0] && userCredits <= countriesPrice[i]) {
-//     userAvailableCountry = countries.slice(0, i);
-//     break;
-//   } else if (userCredits > countriesPrice[countriesPrice.length - 1]) {
-//     userAvailableCountry = countries;
+//   while (userCredits < countriesPrice[0] || isNaN(userCredits)) {
+//     alert(
+//       `Нажаль, сума ${userCredits} не достатня для здійснення замовлення! Будь-ласка, введіть більшу суму!`
+//     );
+//     userCredits = Number.parseInt(
+//       prompt("Будь-ласка, введіть суму яку ви готові витратити на поїздку")
+//     );
 //   }
 // }
-
-// alert(`Країни, доступні Вам для вибору : ${userAvailableCountry}`);
-
-// userCountries = prompt("Будь-ласка, введіть обрані країни через пробіл")
-//   .toLowerCase()
-//   .split(" ");
-// for (let i = 0; i <= userCountries.length - 1; i += 1) {
-//   if (userCountries[i] === "usa") {
-//     userCountries[i] = userCountries[i].toUpperCase();
+// function getAvailableCountries() {
+//   console.log(userCredits >= countriesPrice[0]);
+//   for (let i = 0; i <= countriesPrice.length; i += 1) {
+//     if (userCredits >= countriesPrice[i]) {
+//       userAvailableCountry = countries.slice(0, i + 1);
+//     } else if (userCredits >= countriesPrice[countriesPrice.length - 1]) {
+//       userAvailableCountry = countries;
+//     }
 //   }
+//   alert(`Країни, доступні Вам для вибору : ${userAvailableCountry}`);
 // }
 
-// let normalizedUserCountries = userCountries.map(function (item, index, array) {
-//   return item[0].toUpperCase() + item.slice(1);
-// });
-// let selectedCountries = [];
-// for (let i = 0; i <= normalizedUserCountries.length; i += 1) {
-//   if (countries.includes(normalizedUserCountries[i])) {
-//     selectedCountries.push(normalizedUserCountries[i]);
+// function selectCountries() {
+//   userCountries = prompt("Будь-ласка, введіть обрані країни через пробіл")
+//     .toLowerCase()
+//     .split(" ");
+//   for (let i = 0; i <= userCountries.length - 1; i += 1) {
+//     if (userCountries[i] === "usa") {
+//       userCountries[i] = userCountries[i].toUpperCase();
+//     }
 //   }
-// }
-// let filterSelectedCountries = selectedCountries.filter(
-//   (e, i) => selectedCountries.indexOf(e) === i
-// );
 
-// alert(`Ви обрали наступні країни: ${filterSelectedCountries}`);
-
-// let totalCost = 0;
-// for (let i = 0; i <= countries.length - 1; i += 1) {
-//   if (filterSelectedCountries.includes(countries[i])) {
-//     totalCost += countriesPrice[i];
+//   let normalizedUserCountries = userCountries.map(function (
+//     item,
+//     index,
+//     array
+//   ) {
+//     return item[0].toUpperCase() + item.slice(1);
+//   });
+//   selectedCountries = [];
+//   for (let i = 0; i <= normalizedUserCountries.length; i += 1) {
+//     if (countries.includes(normalizedUserCountries[i])) {
+//       selectedCountries.push(normalizedUserCountries[i]);
+//     }
 //   }
+//   filterSelectedCountries = selectedCountries.filter(
+//     (e, i) => selectedCountries.indexOf(e) === i
+//   );
+
+//   alert(`Ви обрали наступні країни: ${filterSelectedCountries}`);
 // }
 
-// while (userCredits < totalCost || isNaN(userCredits)) {
+// function checkSelectedcountries() {
+//   let totalCost = 0;
+//   for (let i = 0; i <= countries.length - 1; i += 1) {
+//     if (filterSelectedCountries.includes(countries[i])) {
+//       totalCost += countriesPrice[i];
+//     }
+//   }
+
+//   while (userCredits < totalCost || isNaN(userCredits)) {
+//     alert(
+//       `Нажаль, загальна вартість, обраних Вами країн (${filterSelectedCountries}), перевищує заплановану суму (${userCredits}) Будь-ласка, введіть більшу суму`
+//     );
+//     userCredits = Number.parseInt(
+//       prompt("Будь-ласка, введіть суму яку ви готові витратити на поїздку")
+//     );
+//   }
+
 //   alert(
-//     `Нажаль, загальна вартість, обраних Вами країн (${filterSelectedCountries}), перевищує заплановану суму (${userCredits}) Будь-ласка, введіть більшу суму`
-//   );
-//   userCredits = Number.parseInt(
-//     prompt("Будь-ласка, введіть суму яку ви готові витратити на поїздку")
+//     `Тур оплачено! Загальна вартість, обраних Вами країн (${filterSelectedCountries}), складає -- (${totalCost}). Залишок на Вашому балансі -- (${
+//       userCredits - totalCost
+//     })`
 //   );
 // }
 
-// alert(
-//   `Тур оплачено! Загальна вартість, обраних Вами країн (${filterSelectedCountries}), складає -- (${totalCost}). Залишок на Вашому балансі -- (${
-//     userCredits - totalCost
-//   })`
-// );
+// registerNewUser();
+// checkUserLog();
+// checkUserPass();
+// getAmount();
+// getAvailableCountries();
+// selectCountries();
+// checkSelectedcountries();
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function calculateTotalPrice(order) {
@@ -420,7 +440,7 @@
 // console.log(foo(arr)); // [1, 2, 3, 4, 5, 6, 7]
 
 // ---------------------------------------------------------------------------------------
-ПЕРЕРОБИТИ;
+// ПЕРЕРОБИТИ;
 // // Реалізуй функцію, яка приймає тип String або Number і повертає масив з протилежним типом даних:
 // function convert(...args) {
 //   const newArr = [];
@@ -436,18 +456,14 @@
 // console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
 
 // ----------------------------------------------------------------------------------------------------------
-ДОРОБИТИ
+// ДОРОБИТИ;
 // // Напиши функцію, яка приймає рядок text, та повертає масив усіх великих літер, які є в text
 // // в такому ж порядку.
-function getCapitals(string)
-const newArr = [];
-const 
-for ()
+// function getCapitals(string)
+// const newArr = [];
+// const
+// for ()
 
-
-
-
-getCapitals('Ukraine Everywhere') // ['U', 'E']
-getCapitals('UkraiNe EveRywherE') // ['U', 'N', 'E', 'R', 'E']
-getCapitals("1234M5678A9") // ['M', 'A']
-
+// getCapitals('Ukraine Everywhere') // ['U', 'E']
+// getCapitals('UkraiNe EveRywherE') // ['U', 'N', 'E', 'R', 'E']
+// getCapitals("1234M5678A9") // ['M', 'A']
