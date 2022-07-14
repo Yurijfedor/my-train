@@ -420,22 +420,22 @@
 // );
 
 // --------------------------------------------НОВІ ЗАДАЧІ
-// // Реалізуйте result (через сплайс)
-// const a = ["a", "b", "c"];
-// const b = [1, [2, 3]];
-// const c = 0;
+// Реалізуйте result (через сплайс)
+const a = ["a", "b", "c"];
+const b = [1, [2, 3]];
+const c = 0;
 
-// function concatAndFlatArr(arr1, arr2, arr3) {
-//   const d = a.concat(c, b);
-//   for (let i = 0; i <= d.length; i += 1) {
-//     if (Array.isArray(d[i])) {
-//       d.splice(i, 1, d[i][0], d[i][1]);
-//     }
-//   }
-//   console.log(d);
-//   return d;
-// }
-// concatAndFlatArr(a, b, c);
+function concatAndFlatArr(arr1, arr2, arr3) {
+  const result = a.concat(c, b);
+  for (let i = 0; i <= result.length; i += 1) {
+    if (Array.isArray(result[i])) {
+      result.splice(i, 1, result[i][0], result[i][1]);
+    }
+  }
+  console.log(result);
+  return result;
+}
+concatAndFlatArr(a, b, c);
 // console.log(result); // ['a', 'b', 'c', 0, 1, 2, 3]
 
 // -------------------------------------------------------------------------------------------------------------------------------------
@@ -454,28 +454,32 @@
 // ---------------------------------------------------------------------------------------
 // ПЕРЕРОБИТИ;
 // // Реалізуй функцію, яка приймає тип String або Number і повертає масив з протилежним типом даних:
-function convert(...args) {
-  const newArr = [];
-  for (const arg of args) {
-    if (isNamber(arg)) {
-      newArr.push(String(arg));
-      break;
-    }
-    newArr.push(Number(arg));
-  }
-  return newArr;
-}
-console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
-
+// function convert(...args) {
+//   const newArr = [];
+//   for (const arg of args) {
+//     if (typeof arg === "string") {
+//       newArr.push(Number(arg));
+//       continue;
+//     }
+//     newArr.push(String(arg));
+//   }
+//   return newArr;
+// }
+// console.log(convert("1", 2, 3, "4")); // [1, '2', '3', 4]
 // ----------------------------------------------------------------------------------------------------------
 // ДОРОБИТИ;
 // // Напиши функцію, яка приймає рядок text, та повертає масив усіх великих літер, які є в text
 // // в такому ж порядку.
-// function getCapitals(string)
-// const newArr = [];
-// const
-// for ()
-
-// getCapitals('Ukraine Everywhere') // ['U', 'E']
-// getCapitals('UkraiNe EveRywherE') // ['U', 'N', 'E', 'R', 'E']
-// getCapitals("1234M5678A9") // ['M', 'A']
+function getCapitals(string) {
+  const newArr = [];
+  const arrFromString = string.split("");
+  for (const element of arrFromString) {
+    if (element === element.toUpperCase() && isNaN(element)) {
+      newArr.push(element);
+    }
+  }
+  return newArr;
+}
+getCapitals("Ukraine Everywhere"); // ['U', 'E']
+getCapitals("UkraiNe EveRywherE"); // ['U', 'N', 'E', 'R', 'E']
+getCapitals("1234M5678A9"); // ['M', 'A']
