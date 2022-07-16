@@ -143,30 +143,30 @@
 // }
 
 // function selectCountries() {
-userCountries = prompt("Будь-ласка, введіть обрані країни через пробіл")
-  .toLowerCase()
-  .split(" ");
-for (let i = 0; i <= userCountries.length - 1; i += 1) {
-  if (userCountries[i] === "usa") {
-    userCountries[i] = userCountries[i].toUpperCase();
-  }
-}
-
-let normalizedUserCountries = userCountries.map(function (item, index, array) {
-  return item[0].toUpperCase() + item.slice(1);
-});
-selectedCountries = [];
-for (let i = 0; i <= normalizedUserCountries.length; i += 1) {
-  if (countries.includes(normalizedUserCountries[i])) {
-    selectedCountries.push(normalizedUserCountries[i]);
-  }
-}
-filterSelectedCountries = selectedCountries.filter(
-  (e, i) => selectedCountries.indexOf(e) === i
-);
-
-alert(`Ви обрали наступні країни: ${filterSelectedCountries}`);
+// userCountries = prompt("Будь-ласка, введіть обрані країни через пробіл")
+//   .toLowerCase()
+//   .split(" ");
+// for (let i = 0; i <= userCountries.length - 1; i += 1) {
+//   if (userCountries[i] === "usa") {
+//     userCountries[i] = userCountries[i].toUpperCase();
+//   }
 // }
+
+// let normalizedUserCountries = userCountries.map(function (item, index, array) {
+//   return item[0].toUpperCase() + item.slice(1);
+// });
+// selectedCountries = [];
+// for (let i = 0; i <= normalizedUserCountries.length; i += 1) {
+//   if (countries.includes(normalizedUserCountries[i])) {
+//     selectedCountries.push(normalizedUserCountries[i]);
+//   }
+// }
+// filterSelectedCountries = selectedCountries.filter(
+//   (e, i) => selectedCountries.indexOf(e) === i
+// );
+
+// alert(`Ви обрали наступні країни: ${filterSelectedCountries}`);
+// // }
 
 // function checkSelectedcountries() {
 //   let totalCost = 0;
